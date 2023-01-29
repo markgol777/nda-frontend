@@ -1,0 +1,975 @@
+$header-background : #141414;
+$nda-color: #252525;
+
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+::placeholder {
+  color: #ffffff;
+}
+
+.main-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  header {
+    background-color: transparent;
+    height: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    margin-bottom: 30px;
+
+    .nda-container {
+      background-color: #252525;
+      width: 156px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 53.99px;
+        height: 18.8px;
+      }
+    }
+
+    .text-header {
+      color: #ffffff;
+      margin-left: 20px;
+      width: 400px;
+      margin-right: 45px;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 34px;
+      letter-spacing: 0.05em;
+      font-family: 'Big Shoulders Text';
+      text-transform: uppercase;
+    }
+
+    .search {
+      position: relative;
+
+      input {
+        width: 532px;
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        height: 60px;
+        padding-left: 20px;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      img {
+        position: absolute;
+        right: 16px;
+        height: 27.75px;
+        width: 27.75px;
+        top: 16px;
+        transition: 0.4s;
+      }
+
+      img:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+
+    .menu-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .menu-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .menu-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+    .profile-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .profile-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .profile-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+    .shopping-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .shopping-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .shopping-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+  }
+
+  .section1 {
+    background-color: #ffffff;
+    height: 573px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 31px;
+    position: relative;
+    overflow: hidden;
+    perspective: 100px;
+
+    .banner1-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      animation: scroll 25s linear infinite;
+
+      .banner1-text {
+        position: absolute;
+        top: 270px;
+        right: -46px;
+        font-family: 'Big Shoulders Text';
+        font-weight: 800;
+        font-size: 110.183px;
+        line-height: 132px;
+        letter-spacing: 0.05em;
+        color: #141414;
+        transform: rotate(-90.38deg)
+      }
+
+    }
+
+    .banner2-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      animation: scroll 25s linear infinite;
+
+      .banner2-text {
+        position: absolute;
+        font-family: 'Big Shoulders Text';
+        font-weight: 800;
+        font-size: 92px;
+        top: 300px;
+        left: 1px;
+        line-height: 110px;
+        letter-spacing: 0.05em;
+        color: #141414;
+        transform: rotate(-60deg);
+      }
+    }
+
+    .banner3-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      animation: scroll 25s linear infinite;
+
+      .banner3-text {
+        position: absolute;
+        font-family: 'Big Shoulders Text';
+        font-weight: 800;
+        width: 467px;
+        font-size: 92px;
+        top: 183px;
+        left: 1px;
+        line-height: 110px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #141414;
+      }
+    }
+
+    .banner4-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      animation: scroll 25s linear infinite;
+
+      .banner4-text {
+        position: absolute;
+        bottom: -115px;
+        right: -3px;
+        font-family: 'Big Shoulders Text';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 166px;
+        line-height: 199px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #141414;
+      }
+    }
+
+    .banner5-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      margin-right: 30px;
+      animation: scroll 25s linear infinite;
+
+      .banner5-text {
+        position: absolute;
+        bottom: -5px;
+        font-family: 'Big Shoulders Text';
+        font-weight: 800;
+        font-size: 120px;
+        line-height: 144px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #141414;
+        transform: rotate(45deg);
+      }
+    }
+
+    .banner6-container {
+      position: relative;
+      width: 340px;
+      height: 473px;
+      animation: scroll 25s linear infinite;
+
+      .banner6-text {
+        position: absolute;
+        top: 150px;
+        right: 85px;
+        font-family: 'Big Shoulders Text';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 152px;
+        line-height: 182px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #141414;
+        transform: rotate(-90.38deg);
+      }
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-259px * 8));
+      }
+    }
+
+  }
+
+  .section1:hover .banner1-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section1:hover .banner2-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section1:hover .banner3-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section1:hover .banner4-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section1:hover .banner5-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section1:hover .banner6-container {
+    animation-play-state: paused;
+    cursor: pointer;
+  }
+
+  .section2 {
+    display: flex;
+    margin-bottom: 35px;
+
+    .left {
+      width: 660px;
+      margin-right: 40px;
+
+      .left-text {
+        width: 624px;
+        text-transform: uppercase;
+        font-family: 'Big Shoulders Text';
+        color: #ffffff;
+        line-height: 67.03px;
+        font-weight: 800;
+        font-size: 56px;
+        margin-bottom: 35px;
+      }
+
+      .left-product {
+        width: 660px;
+        height: 660px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+      }
+
+      .description-text {
+        margin-top: 25px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28.13px;
+        color: #ffffff;
+      }
+    }
+
+    .right {
+      width: 660px;
+
+      .text-right {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27.28px;
+        font-family: 'Nunito', sans-serif;
+        color: #ffffff;
+      }
+
+      .text-up {
+        margin-top: 40px;
+      }
+
+      .icon {
+        width: 348px;
+        height: 60px;
+        margin-top: 20px;
+        margin-left: -26px;
+        margin-bottom: 57px;
+      }
+
+      .right-product {
+        width: 660px;
+        height: 660px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+
+        .buy-btn {
+          position: absolute;
+        }
+      }
+
+      .description-text {
+        margin-top: 25px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 28.13px;
+        color: #ffffff;
+      }
+    }
+
+  }
+
+  .section3 {
+    height: 430px;
+
+    .background-container {
+      margin-bottom: 25px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      flex-direction: column;
+
+
+      .btn-shop {
+        position: absolute;
+      }
+
+    }
+
+    .description-text {
+      font-family: 'Roboto', sans-serif;
+      position: relative;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 28.13px;
+      color: #ffffff;
+    }
+  }
+
+  .section4 {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    margin-top: 100px;
+    align-items: space-between;
+
+    .left {
+      width: 660px;
+      margin-right: 60px;
+      margin-bottom: 60px;
+
+      .left-text {
+        width: 660px;
+        font-family: 'Big Shoulders Text';
+        font-weight: 800;
+        font-size: 56px;
+        line-height: 67.03px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .right {
+      width: 660px;
+
+      .text-top-right {
+        margin-top: 24px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27.28px;
+        letter-spacing: 0.05em;
+      }
+
+      .text-bottom-right {
+        margin-top: 15px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27.28px;
+        letter-spacing: 0.05em;
+        width: 473px;
+      }
+    }
+
+    .demand-container {
+      display: flex;
+
+      .demand1 {
+        position: relative;
+        border: 4px solid #fff;
+        width: 430px;
+        height: 360px;
+        margin-right: 35px;
+
+        .leaf-icon {
+          position: absolute;
+          top: 35px;
+        }
+
+        .demand1-text {
+          position: absolute;
+          top: 45px;
+          right: 45px;
+          font-family: 'Big Shoulders Text';
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 28.73px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+
+        .demand1-text2 {
+          position: absolute;
+          font-family: 'Nunito', sans-serif;
+          bottom: 35px;
+          right: 35px;
+          left: 35px;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 24.55px;
+          letter-spacing: 0.05em;
+          width: 360px;
+        }
+      }
+
+      .demand2 {
+        position: relative;
+        border: 4px solid #fff;
+        width: 430px;
+        height: 360px;
+        margin-right: 35px;
+
+        .demand2-icon {
+          position: absolute;
+          top: 35px;
+          left: 35px;
+        }
+
+        .demand2-text {
+          position: absolute;
+          top: 45px;
+          right: 45px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          font-family: 'Big Shoulders Text';
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+        }
+
+        .demand2-text2 {
+          position: absolute;
+          bottom: 35px;
+          left: 35px;
+          right: 35px;
+          width: 360px;
+          font-family: 'Nunito';
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 25px;
+          letter-spacing: 0.05em;
+
+        }
+      }
+
+      .demand3 {
+        position: relative;
+        border: 4px solid #fff;
+        width: 430px;
+        height: 360px;
+
+        .demand3-icon {
+          position: absolute;
+          top: 35px;
+          left: 35px;
+        }
+
+        .demand3-text {
+          position: absolute;
+          top: 45px;
+          right: 35px;
+          font-family: 'Big Shoulders Text';
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 29px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+
+        .demand3-text2 {
+          position: absolute;
+          width: 360px;
+          font-family: 'Nunito';
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 25px;
+          letter-spacing: 0.05em;
+          bottom: 35px;
+          right: 35px;
+          left: 35px;
+        }
+      }
+    }
+  }
+
+  .section5 {
+    width: 96%;
+    margin-top: 55px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .section5-tittle {
+      font-family: 'Big Shoulders Text';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 56px;
+      line-height: 67px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .tastes-best-container {
+      display: flex;
+      padding-top: 35px;
+
+      .product1 {
+        position: relative;
+        margin-bottom: 18px;
+        display: flex;
+        margin-right: 35px;
+        width: 430px;
+        height: 430px;
+        background-color: #8B84D4;
+        align-items: center;
+        justify-content: center;
+
+        .lane {
+          position: absolute;
+          height: 100%;
+          right: 24px;
+          top: 0;
+          width: 45px;
+          background-color: #942C1E;
+
+          .line-text-container {
+            padding-left: 21px;
+            padding-right: 21px;
+            display: flex;
+            transform: rotate(90deg);
+
+            p {
+              font-family: 'Big Shoulders Text';
+              font-weight: 800;
+              font-size: 30px;
+              line-height: 36px;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              color: #FFFFFF;
+              margin-right: 9px;
+            }
+          }
+
+        }
+      }
+
+      .left-right-container {
+        display: flex;
+        width: 430px;
+        justify-content: space-between;
+
+        .left {
+          .description-product1 {
+            font-family: 'Nunito';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 11px;
+            color: #ffffff;
+          }
+
+          .pricing-container {
+            display: flex;
+
+            .price-product1 {
+              font-family: 'Nunito';
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 27px;
+              margin-right: 11px;
+              color: #F75656;
+            }
+
+            .old-price-product1 {
+              font-family: 'Nunito';
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 27px;
+              text-decoration-line: line-through;
+              color: #A2A2A2;
+            }
+          }
+        }
+
+        .right {
+          .right-btn-buy {
+            width: 130px;
+            background-color: transparent;
+            height: 56px;
+            border-radius: 59%;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            transition: 0.4s;
+            font-size: 20px;
+          }
+
+          .right-btn-buy:hover {
+            background-color: #3DF21F;
+            color: #000000;
+            border: 2px solid #3DF21F;
+          }
+        }
+      }
+
+      .product2 {
+        width: 430px;
+        height: 430px;
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 35px;
+        margin-bottom: 16px;
+      }
+
+      .left-right-container {
+        width: 430px;
+        display: flex;
+        justify-content: space-between;
+
+        .left {
+          .description-product2 {
+            width: 200px;
+
+            font-family: 'Nunito';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #ffffff;
+          }
+
+          .price-product2 {
+            font-family: 'Nunito';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            color: #FFFFFF;
+            margin-top: 11px;
+          }
+        }
+
+        .right {
+          .right-btn-buy {
+            width: 130px;
+            background-color: transparent;
+            height: 56px;
+            border-radius: 59%;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+          }
+        }
+      }
+
+      .product3 {
+        width: 430px;
+        height: 430px;
+        background-color: #567D52;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 15px;
+
+        .lane {
+          position: absolute;
+          height: 100%;
+          right: 24px;
+          top: 0;
+          width: 45px;
+          background-color: #942C1E;
+
+          .line-text-container {
+            padding-left: 21px;
+            padding-right: 21px;
+            display: flex;
+            transform: rotate(90deg);
+
+            p {
+              font-family: 'Big Shoulders Text';
+              font-weight: 800;
+              font-size: 30px;
+              line-height: 36px;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+              color: #FFFFFF;
+              margin-right: 9px;
+            }
+          }
+        }
+      }
+
+      .left-right-container {
+        .left {
+          .description-product3 {
+            width: 200px;
+            font-family: 'Nunito';
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #ffffff;
+          }
+
+          .price-container-product3 {
+            display: flex;
+
+            .price-product3 {
+              font-family: 'Nunito';
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 27px;
+              margin-right: 11px;
+              color: #F75656;
+            }
+
+            .old-price-product3 {
+              font-family: 'Nunito';
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 27px;
+              text-decoration-line: line-through;
+              color: #A2A2A2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section6 {
+    width: 96%;
+
+    .left-right-container {
+      display: flex;
+      margin-bottom: 55px;
+
+      .left {
+        margin-right: 40px;
+      }
+
+      .right {
+        .right-tittle {
+          font-family: 'Big Shoulders Text';
+          font-weight: 800;
+          font-size: 56px;
+          line-height: 67px;
+          letter-spacing: 0.05em;
+          color: #ffffff;
+          margin-bottom: 35px;
+        }
+
+        .p-right {
+          width: 660px;
+          font-family: 'Nunito';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 25px;
+          letter-spacing: 0.05em;
+          margin-bottom: 10px;
+          color: #FFFFFF;
+        }
+
+        .p2-right {
+          @extend .p-right;
+        }
+      }
+    }
+  }
+
+  .section7 {
+    width: 100%;
+    margin-bottom: 55px;
+
+    .product-type-container {
+      display: flex;
+      overflow: hidden;
+
+      .product-type {
+        animation: scroll2 25s linear infinite;
+        font-family: 'Big Shoulders Text';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 66px;
+        line-height: 79px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+    }
+
+    @keyframes scroll2 {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-265px * 6));
+      }
+    }
+  }
+
+  footer {
+    width: 96%;
+    border-top: 4px solid #ffffff;
+    padding-top: 45px;
+    padding-bottom: 40px;
+    display: flex;
+
+    .nda-container {
+      margin-right: 185px;
+      background-color: #252525;
+      width: 156px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 53.99px;
+        height: 18.8px;
+      }
+    }
+
+    .right-footer {
+      display: flex;
+
+      .right-footer1 {
+        margin-right: 111px;
+      }
+
+      .right-footer2 {
+        margin-right: 114px;
+      }
+
+      .right-footer3 {
+        margin-right: 110px;
+      }
+
+      .footer-text {
+        font-family: 'Big Shoulders Text';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 22px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 25px;
+        transition: 0.4s;
+      }
+
+      .footer-text:hover {
+        cursor: pointer;
+        color: #3DF21F;
+      }
+    }
+  }
+}
