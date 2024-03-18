@@ -17,8 +17,7 @@
 
         <div class="profile-container"><img class="profile-icon" src="/assets/images/profile.svg" alt="profile-icon">
         </div>
-        <div class="shopping-container"><img class="shopping-icon" src="/assets/images/shopping-bag.svg"
-                alt="shopping-icon"></div>
+        <div class="shopping-container"><img class="shopping-icon" src="/assets/images/shopping-bag.svg"alt="shopping-icon"></div>
 
     </header>
 
@@ -75,30 +74,34 @@
         </div>
     </section>
     <section class="section2">
-        <div class="left">
+        <div class="left" (mousemove)="mouseEnter($event)">
             <p class="left-text">unique, tasty healthy, and without any chemicals and preservatives.</p>
-            <div class="left-product">
-                <img src="/assets/images/Group 194.png" alt="3product-icon">
-            </div>
-            <p class="description-text">CANDIES</p>
+            <a class="cokie-container" [routerLink]="[ '/aboutcandy']">
+                <div class="left-product" (mouseover)="mouseOver()" (mouseout)="mouseLeave()">
+                    <img src="/assets/images/Group 194.png" alt="3product-icon">
+                </div>
+                <p class="description-text">CANDIES</p>
+            </a>
+
         </div>
-        <div class="right">
+        <button class="buy-btn cursor buy-btn2">Go shop</button>
+
+        <div class="right" (mousemove)="mouseEnter($event)">
+            <a class="cokie-container" [routerLink]="[ '/aboutcookie']">
             <p class="text-right text-up">Natural food company from Berlin, Germany.</p>
             <p class="text-right">Delicious and simply nutritious with nothing artificial added.</p>
             <img class="icon" src="/assets/images/Frame-6.svg" alt="icons">
-
-            <div class="right-product">
+            <div class="right-product" (mouseover)="mouseOver()" (mouseout)="mouseLeave()">
                 <img src="/assets/images/Group-195.svg" alt="products">
-                <img class="buy-btn" src="/assets/images/Group-166.svg" alt="products">
             </div>
-
             <p class="description-text">COOKIES</p>
+        </a>
         </div>
+        <button class="buy-btn cursor">Go shop</button>
     </section>
-    <section class="section3">
-        <div class="background-container">
+    <section class="section3" (mousemove)="mouseEnter($event)">
+        <div class="background-container" (mouseover)="mouseOver()" (mouseout)="mouseLeave()">
             <img class="section3-background" src="/assets/images/image-95.png" alt="background">
-            <img class="btn-shop" src="/assets/images/Group-144.svg" alt="shopping button">
         </div>
 
         <p class="description-text">DISHES</p>
@@ -145,13 +148,21 @@
                     <img src="/assets/images/purple-tastes-best.png" alt="purple package">
                     <div class="lane">
                         <div class="line-text-container">
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
                         </div>
+                        
                     </div>
                 </div>
                 <div class="left-right-container">
@@ -186,12 +197,19 @@
                     <img src="/assets/images/product3-green.png" alt="product 3">
                     <div class="lane">
                         <div class="line-text-container">
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
-                            <p>sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
+                            <p class="lane-text">sale</p>
                         </div>
                     </div>
                 </div>
@@ -266,8 +284,8 @@
                 <p class="footer-text">terms of use</p>
             </div>
             <div>
-                <p class="footer-text">instagram</p>
-                <p class="footer-text">meta</p>
+                <p class="footer-text social-media-text">instagram</p>
+                <p class="footer-text social-media-text">meta</p>
             </div>
         </div>
     </footer>

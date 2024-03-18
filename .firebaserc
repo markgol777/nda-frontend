@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "petro-shop": {
+      "hosting": {
+        "shop": [
+          "petro-shop"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "petro-shop"
+  }
+}

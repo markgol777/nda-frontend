@@ -15,7 +15,8 @@ $nda-color: #252525;
   flex-direction: column;
 
   header {
-    background-color: transparent;
+    width: 97%;
+    background-color: #141414;
     height: 120px;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -328,6 +329,18 @@ $nda-color: #252525;
         margin-bottom: 35px;
       }
 
+      .left-text:hover {
+        cursor: auto;
+      }
+
+      .cokie-container {
+        text-decoration: none;
+      }
+
+      .cokie-container:hover {
+        cursor: none;
+      }
+
       .left-product {
         width: 660px;
         height: 660px;
@@ -344,11 +357,16 @@ $nda-color: #252525;
         font-size: 24px;
         line-height: 28.13px;
         color: #ffffff;
+        text-decoration: none;
       }
     }
 
     .right {
       width: 660px;
+
+      .cokie-container {
+        text-decoration: none;
+      }
 
       .text-right {
         font-weight: 400;
@@ -377,10 +395,10 @@ $nda-color: #252525;
         justify-content: center;
         align-items: center;
         background-color: #ffffff;
+      }
 
-        .buy-btn {
-          position: absolute;
-        }
+      .right-product {
+        cursor: none;
       }
 
       .description-text {
@@ -391,8 +409,55 @@ $nda-color: #252525;
         line-height: 28.13px;
         color: #ffffff;
       }
+
+    }
+  }
+
+  @keyframes animationTest1 {
+    from {
+      opacity: 0;
     }
 
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes animationTest2 {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+
+
+  }
+
+  .buy-btn {
+    position: absolute;
+    border-radius: 59%;
+    background-color: #141414;
+    font-family: 'Roboto', sans-serif;
+    width: 234px;
+    height: 90px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 30px;
+    opacity: 0;
+    letter-spacing: 0.05em;
+    z-index: 999;
+  }
+
+  .buy-btn2 {
+    translate: translate(100, 100);
+  }
+
+  .left:hover {
+    cursor: none;
   }
 
   .section3 {
@@ -407,9 +472,20 @@ $nda-color: #252525;
       position: relative;
       flex-direction: column;
 
-
-      .btn-shop {
+      .btn-buy {
+        border-radius: 59%;
+        width: 234px;
+        height: 90px;
         position: absolute;
+        border: 1px solid #ffffff;
+        background-color: #141414;
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0.05em;
+        color: #FFFFFF;
+        // opacity: 1;
       }
 
     }
@@ -422,6 +498,33 @@ $nda-color: #252525;
       line-height: 28.13px;
       color: #ffffff;
     }
+
+
+    @keyframes animationTest1 {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes animationTest2 {
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+
+
+    }
+  }
+
+  .section3:hover {
+    cursor: none;
   }
 
   .section4 {
@@ -449,6 +552,7 @@ $nda-color: #252525;
 
     .right {
       width: 660px;
+      position: relative;
 
       .text-top-right {
         margin-top: 24px;
@@ -592,7 +696,7 @@ $nda-color: #252525;
   }
 
   .section5 {
-    width: 96%;
+    margin-right: 20px;
     margin-top: 55px;
     display: flex;
     align-items: left;
@@ -629,6 +733,7 @@ $nda-color: #252525;
           position: absolute;
           height: 100%;
           right: 24px;
+          overflow: hidden;
           top: 0;
           width: 45px;
           background-color: #942C1E;
@@ -639,7 +744,8 @@ $nda-color: #252525;
             display: flex;
             transform: rotate(90deg);
 
-            p {
+            .lane-text {
+              animation: scroll3 8s linear infinite;
               font-family: 'Big Shoulders Text';
               font-weight: 800;
               font-size: 30px;
@@ -648,6 +754,16 @@ $nda-color: #252525;
               text-transform: uppercase;
               color: #FFFFFF;
               margin-right: 9px;
+            }
+
+            @keyframes scroll3 {
+              0% {
+                transform: translateX(0);
+              }
+        
+              100% {
+                transform: translateX(calc(-57px * 6));
+              }
             }
           }
 
@@ -702,7 +818,7 @@ $nda-color: #252525;
             height: 56px;
             border-radius: 59%;
             color: #ffffff;
-            border: 2px solid #ffffff;
+            border: 1px solid #ffffff;
             transition: 0.4s;
             font-size: 20px;
           }
@@ -710,7 +826,7 @@ $nda-color: #252525;
           .right-btn-buy:hover {
             background-color: #3DF21F;
             color: #000000;
-            border: 2px solid #3DF21F;
+            border: 1px solid #3DF21F;
           }
         }
       }
@@ -761,7 +877,7 @@ $nda-color: #252525;
             height: 56px;
             border-radius: 59%;
             color: #ffffff;
-            border: 2px solid #ffffff;
+            border: 1px solid #ffffff;
           }
         }
       }
@@ -782,6 +898,7 @@ $nda-color: #252525;
           right: 24px;
           top: 0;
           width: 45px;
+          overflow: hidden;
           background-color: #942C1E;
 
           .line-text-container {
@@ -790,7 +907,8 @@ $nda-color: #252525;
             display: flex;
             transform: rotate(90deg);
 
-            p {
+            .lane-text {
+              animation: scroll3 8s linear infinite;
               font-family: 'Big Shoulders Text';
               font-weight: 800;
               font-size: 30px;
@@ -799,6 +917,16 @@ $nda-color: #252525;
               text-transform: uppercase;
               color: #FFFFFF;
               margin-right: 9px;
+            }
+
+            @keyframes scroll3 {
+              0% {
+                transform: translateX(0);
+              }
+        
+              100% {
+                transform: translateX(calc(-57px * 6));
+              }
             }
           }
         }
@@ -844,7 +972,7 @@ $nda-color: #252525;
   }
 
   .section6 {
-    width: 96%;
+    margin-right: 20px;
 
     .left-right-container {
       display: flex;
@@ -964,6 +1092,10 @@ $nda-color: #252525;
         color: #FFFFFF;
         margin-bottom: 25px;
         transition: 0.4s;
+      }
+
+      .social-media-text {
+        font-size: 25px;
       }
 
       .footer-text:hover {

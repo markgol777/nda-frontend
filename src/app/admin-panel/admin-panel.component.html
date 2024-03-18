@@ -1,0 +1,104 @@
+<div class="main-container">
+    <header>
+        <div class="nda-container">
+            <img src="/assets/images/NDA.svg" alt="NDA-icon">
+        </div>
+        <p class="log-out-btn">Log out</p>
+    </header>
+    <section class="section1">
+        <button class="btn-add" (click)="openDialog()">Add New</button>
+        <div class="add" *ngIf="showAdd">
+                <div class="input1">
+                  <p class="name-text">Name</p>
+                  <input type="text" class="name-input">
+                </div>
+
+                <div class="input2">
+                  <p class="weight">weight</p>
+                  <input type="text" class="weight-input">
+                </div>
+
+                <div class="input3">
+                  <p class="price-text">price</p>
+                  <input type="text" class="price-input">
+                </div>
+
+                <div class="input4">
+                  <p class="oldPrice-text">old price</p>
+                  <input type="text" class="oldPrice-input">
+                </div>
+
+                <div class="input5">
+                  <p class="bgColor1-text">background color on product top page</p>
+                  <input type="text" class="bgColor1-input">
+                </div>
+
+                <div class="input6">
+                  <p class="bgColor2-text">background color on product bottom page</p>
+                  <input type="text" class="bgColor2-input">
+                </div>
+
+                <div class="input7">
+                  <p class="bgColor-text">background color</p>
+                  <input type="text" class="bgColor-input">
+                </div>
+
+                <div class="input8">
+                  <p class="upload-image-text">Upload image</p>
+                  <input type="text" class="image-input">
+
+                  <!-- <input type="file" class="upload-image-input" accept="image/png, image/jpeg"> -->
+                </div>
+
+                <div class="input9">
+                  <div class="left">
+                    <p class="laneSale-text">lane sale</p>
+                    <input type="radio" class="laneSale-checkbox" name="checkbox">
+                  </div>
+                  <div class="right">
+                    <p class="laneNew-text">lane new</p>
+                    <input type="radio" class="laneNew-checkbox" name="checkbox">
+                  </div>
+                </div>
+
+                <div class="input10">
+                  <p class="description-text">description</p>
+                  <input type="text" class="description-input">
+                </div>
+
+                <input type="button" class="sumbit-btn" value="Add product" (click)="addProduct()">
+        </div>
+        <table>
+            <tr>
+                <th>name</th>
+                <!-- <th>weight</th> -->
+                <th>price</th>
+                <th>old price</th>
+                <th>bg color on product page on top</th>
+                <th>bg color on product page on bottom</th>
+                <th>bg color</th>
+                <th>image</th>
+                <th>lane sale</th>
+                <th>lane new</th>
+                <th>description</th>
+                <th>action</th>
+              </tr>
+              <tr *ngFor="let product of products">
+                <td class="id">{{product._id}}</td>
+                <td>{{product.title}}</td>
+                <!-- <td>{{product.weight}}</td> -->
+                <td>{{product.price}}</td>
+                <td>{{product.oldPrice}}</td>
+                <td>{{product.bgTop}}</td>
+                <td>{{product.bgBottom}}</td>
+                <td>{{product.bg}}</td>
+                <td><img height="40px" width="40px" [src]="product.imageUrl" alt=""></td>
+                <td>{{product.saleLane}}</td>
+                <td>{{product.newLane}}</td>
+                <td>{{product.description}}</td>
+                <td class="btn-container"><button class="delete-btn" (click)="delete($event)">Delete</button> <button class="edit-btn" (click)="edit($event)">Edit</button></td>
+                <!-- <td><button class="action-btn">...</button></td> -->
+            </tr>
+        </table>
+    </section>
+</div>
