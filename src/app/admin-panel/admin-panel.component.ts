@@ -91,12 +91,11 @@ export class AdminPanelComponent implements OnInit {
         document.querySelector<any>('.bgColor1-input').value = data.bgTop;
         document.querySelector<any>('.bgColor2-input').value = data.bgBottom;
         document.querySelector<any>('.bgColor-input').value = data.bg;
-        document.querySelector<any>('.laneSale-checkbox').checked =
-          data.saleLane;
+        document.querySelector<any>('.laneSale-checkbox').checked = data.saleLane;
         document.querySelector<any>('.laneNew-checkbox').checked = data.laneNew;
-        document.querySelector<any>('.description-input').value =
-          data.description;
+        document.querySelector<any>('.description-input').value = data.description;
         document.querySelector<any>('.image-input').value = data.imageUrl;
+        document.querySelector<any>('.category').value = data.category;
       });
     this.editState = true;
   }
