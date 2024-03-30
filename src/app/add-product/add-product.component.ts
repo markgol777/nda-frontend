@@ -18,7 +18,6 @@ export class AddProductComponent implements OnInit {
     'Content-Type': 'application/json',
   });;
 
-  // , private fs:AngularFirestore
   constructor(public dialog: MatDialog, private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -30,7 +29,6 @@ export class AddProductComponent implements OnInit {
       .get(`${this.api}products`, { headers: this.headers })
       .subscribe((products: any) => {
         this.products = products;
-        console.log(products);
       });
   }
 
@@ -56,7 +54,6 @@ export class AddProductComponent implements OnInit {
     this.http
     .post(`${this.api}products/create`, this.product, { headers: this.headers })
     .subscribe((products: any) => {
-      console.log(products);
     });
 
     this.dialog.closeAll();

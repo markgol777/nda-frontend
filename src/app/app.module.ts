@@ -44,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     // provideFirestore(() => getFirestore()),
     // provideStorage(() => getStorage())
   ],
-  providers: [AddProductComponent],
+  providers: [AddProductComponent, CookiePageComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

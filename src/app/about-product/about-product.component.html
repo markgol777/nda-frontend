@@ -1,1 +1,118 @@
-<p>about-product works!</p>
+<div class="main-container" [style]="background">
+  <header>
+    <a [routerLink]="['']">
+      <div class="nda-container">
+        <img src="/assets/images/NDA-white.svg" alt="NDA-icon" />
+      </div>
+    </a>
+
+    <p class="text-header">
+      that makes binging healthy for you that is not only authentic but also
+      tasty
+    </p>
+
+    <div class="search">
+      <input type="text" placeholder="You can search by ingridients or product name" />
+      <img src="/assets/images/Vector.svg" alt="" />
+    </div>
+
+    <div class="menu-container">
+      <img class="menu-icon" src="/assets/images/menu.svg" alt="menu-icon" />
+    </div>
+
+    <div class="profile-container">
+      <img class="profile-icon" src="/assets/images/profile.svg" alt="profile-icon" />
+    </div>
+    <div (click)="cartShow()" class="shopping-container"><img class="shopping-icon" src="/assets/images/shopping-bag.svg"
+      alt="shopping-icon"></div>
+  <div class="cart">
+    <div class="top">
+      <p>Shopping cart</p>
+      <p class="close-cart-btn" (click)="closeCart()">X</p>
+    </div>
+    <div class="products">
+      <div class="product-container">
+        <div *ngFor="let product1 of cart" class="product">
+          <div class="left">
+            <img height="160px" width="160px" [src]="product1.imageUrl" alt="">
+          </div>
+          <div class="right">
+            <p class="name">{{product.title}}</p>
+            <p class="price">{{product.price}}</p>
+            <p class="description">{{product.description}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="bottom-top">
+          <div class="left-right-container-1">
+            <div class="left">
+              <p class="total-text">Total</p>
+            </div>
+            <div class="right">
+              <p class="total-price">${{totalPrice}}</p>
+            </div>
+          </div>
+
+          <div class="left-right-container-2">
+            <div class="left">
+              <p class="deliver-text">Deliver</p>
+            </div>
+            <div class="right">
+              <p class="taxes-text">Taxes and shipping fee will be calculated at checkout</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="checkout-btn">Check out</button>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <div class="product-info">
+    <p class="bread-crumbs">home/{{product.category}}<span class="product-name">/{{product.title}}</span></p>
+    <div class="left-right-container">
+      <div class="left">
+        <img class="product-img" [src]="product.imageUrl" alt="">
+        <p class="description">{{product.description}}</p>
+      </div>
+      <div class="right">
+        <h1 class="title">{{product.title}}</h1>
+        <div class="price-container">
+          <p class="price-text">{{product.price}} <span class="old-price">{{product.oldPrice}}</span></p>
+          <button class="add-to-cart-btn" (click)="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="nda-container">
+        <img src="/assets/images/NDA-white.svg" alt="NDA-icon">
+    </div>
+
+    <div class="right-footer">
+        <div class="right-footer1">
+            <p class="footer-text">cookies</p>
+            <p class="footer-text">candies</p>
+            <p class="footer-text">dishes</p>
+        </div>
+        <div class="right-footer2">
+            <p class="footer-text">about us</p>
+            <p class="footer-text">contacts</p>
+            <p class="footer-text">delivery</p>
+        </div>
+        <div class="right-footer3">
+            <p class="footer-text">privacy policy</p>
+            <p class="footer-text">terms of use</p>
+        </div>
+        <div>
+            <p class="footer-text social-media-text">instagram</p>
+            <p class="footer-text social-media-text">meta</p>
+        </div>
+    </div>
+  </footer>
+</div>
+

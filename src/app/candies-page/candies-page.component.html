@@ -1,30 +1,69 @@
 <div class="main-container">
   <header>
-    <a [routerLink]="['']">
+    <a [routerLink]="[ '']">
       <div class="nda-container">
-        <img src="/assets/images/NDA-white.svg" alt="NDA-icon" />
+        <img src="/assets/images/NDA-white.svg" alt="NDA-icon">
       </div>
     </a>
 
-    <p class="text-header">
-      that makes binging healthy for you that is not only authentic but also
-      tasty
-    </p>
+    <p class="text-header">that makes binging healthy for you that is not only authentic but also tasty</p>
 
     <div class="search">
-      <input type="text" placeholder="You can search by ingridients or product name" />
-      <img src="/assets/images/Vector-black.svg" alt="" />
+      <input type="text" placeholder="You can search by ingridients or product name">
+      <img src="/assets/images/Vector-black.svg" alt="">
     </div>
 
     <div class="menu-container">
-      <img class="menu-icon" src="/assets/images/menu-black.svg" alt="menu-icon" />
+      <img class="menu-icon" src="/assets/images/menu-black.svg" alt="menu-icon">
     </div>
 
-    <div class="profile-container">
-      <img class="profile-icon" src="/assets/images/profile-black.svg" alt="profile-icon" />
+    <div class="profile-container"><img class="profile-icon" src="/assets/images/profile-black.svg" alt="profile-icon">
     </div>
-    <div class="shopping-container">
-      <img class="shopping-icon" src="/assets/images/shopping-bag-black.svg" alt="shopping-icon" />
+    <div (click)="cartShow()" class="shopping-container"><img class="shopping-icon" src="/assets/images/shopping-bag-black.svg"
+        alt="shopping-icon"></div>
+    <div class="cart">
+      <div class="top">
+        <p>Shopping cart</p>
+        <p class="close-cart-btn" (click)="closeCart()">X</p>
+      </div>
+      <div class="products">
+        <div class="product-container">
+          <div *ngFor="let product of cart" class="product">
+            <div class="left">
+              <img height="160px" width="160px" [src]="product.imageUrl" alt="">
+            </div>
+            <div class="right">
+              <p class="name">{{product.title}}</p>
+              <p class="price">{{product.price}}</p>
+              <p class="description">{{product.description}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom">
+          <div class="bottom-top">
+            <div class="left-right-container-1">
+              <div class="left">
+                <p class="total-text">Total</p>
+              </div>
+              <div class="right">
+                <p class="total-price">${{totalPrice}}</p>
+              </div>
+            </div>
+
+            <div class="left-right-container-2">
+              <div class="left">
+                <p class="deliver-text">Deliver</p>
+              </div>
+              <div class="right">
+                <p class="taxes-text">Taxes and shipping fee will be calculated at checkout</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="checkout-btn">Check out</button>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -43,6 +82,7 @@
   <section class="section2">
     <div class="tastes-best-container">
       <div *ngFor="let product of products">
+        <a [routerLink]="[ '/aboutProduct/', product._id]">
         <div class="product1" [style.background-color]="product.bg">
           <img width="314px" height="300px" [src]="product.imageUrl" alt="purple package" />
           <div class="lane" *ngIf="product.saleLane">
@@ -63,6 +103,7 @@
             </div>
           </div>
         </div>
+
         <div class="left-right-container">
           <div class="left">
             <p class="description-product1">{{product.title}}</p>
@@ -75,158 +116,8 @@
             <button class="right-btn-buy">Buy</button>
           </div>
         </div>
+      </a>
       </div>
-
-      <!-- <div>
-                <div class="product1">
-                    <img src="/assets/images/purple-tastes-best.png" alt="purple package">
-                    <div class="lane">
-                        <div class="line-text-container">
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p>sale</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product1">GINGER SNAP - 100g</p>
-                        <div class="pricing-container">
-                            <p class="price-product1">$15,00</p>
-                            <p class="old-price-product1">$25,00</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product2-blue">
-                    <p class="almond-text">almond</p>
-                    <img src="/assets/images/product2-blue.png" alt="product 2">
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product2">Almond- 100g</p>
-                        <p class="price-product2">$15,00</p>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product3-white">
-                    <img src="/assets/images/product2-white.png" alt="product 3">
-                    <div class="lane">
-                        <div class="line-text-container">
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                            <p class="lane-text">new</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product3">oatmeal - 150g</p>
-                        <div class="price-container-product3">
-                            <p class="price-product3-white">$15,00</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tastes-best-container">
-            <div>
-                <div class="product1-pink">
-                    <p class="betal-text">Betel</p>
-                    <img src="/assets/images/product1-pink.png" alt="purple package">
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product1">Betel - 100g</p>
-                        <div class="pricing-container">
-                            <p class="price-product1-pink">$15,00</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product2-grey">
-                    <img src="/assets/images/product2-white.png" alt="product 2">
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product2">BEETROOT - 200g</p>
-                        <p class="price-product2">$15,00</p>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="product3">
-                    <img src="/assets/images/product3-green.png" alt="product 3">
-                    <div class="lane">
-                        <div class="line-text-container">
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                            <p class="lane-text">sale</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="left-right-container">
-                    <div class="left">
-                        <p class="description-product3">RAGI - 100g</p>
-                        <div class="price-container-product3">
-                            <p class="price-product3">$15,00</p>
-                            <p class="old-price-product3">$25,00</p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <button class="right-btn-buy">Buy</button>
-                    </div>
-                </div>
-            </div> -->
     </div>
   </section>
 

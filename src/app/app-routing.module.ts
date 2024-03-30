@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: 'aboutcookie', component: CookiePageComponent},
   {path: 'aboutcandy', component: CandiesPageComponent},
   {path: 'admin', component: AdminPanelComponent},
-  {path: 'aboutProduct', component: AboutProductComponent}
+  {path: 'aboutProduct/:id', component: AboutProductComponent},
 ];
 
 @NgModule({

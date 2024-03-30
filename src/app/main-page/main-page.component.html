@@ -17,8 +17,51 @@
 
         <div class="profile-container"><img class="profile-icon" src="/assets/images/profile.svg" alt="profile-icon">
         </div>
-        <div class="shopping-container"><img class="shopping-icon" src="/assets/images/shopping-bag.svg"alt="shopping-icon"></div>
+        <div class="shopping-container" (click)="cartShow()"><img class="shopping-icon" src="/assets/images/shopping-bag.svg"alt="shopping-icon"></div>
+        <div class="cart">
+            <div class="top">
+                <p>Shopping cart</p>
+                <p class="close-cart-btn" (click)="closeCart()">X</p>
+            </div>
+            <div class="products">
+                <div class="product-container">
+                    <div *ngFor="let product of cart" class="product">
+                        <div class="left">
+                            <img height="160px" width="160px"  [src]="product.imageUrl" alt="">
+                        </div>
+                        <div class="right">
+                            <p class="name">{{product.title}}</p>
+                            <p class="price">{{product.price}}</p>
+                            <p class="description">{{product.description}}</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="bottom">
+                    <div class="bottom-top">
+                        <div class="left-right-container-1">
+                            <div class="left">
+                                <p class="total-text">Total</p>
+                            </div>
+                            <div class="right">
+                                <p class="total-price">${{totalPrice}}</p>
+                            </div>
+                        </div>
+
+                        <div class="left-right-container-2">
+                            <div class="left">
+                                <p class="deliver-text">Deliver</p>
+                            </div>
+                            <div class="right">
+                                <p class="taxes-text">Taxes and shipping fee will be calculated at checkout</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="checkout-btn">Check out</button>
+                </div>
+            </div>
+        </div>
     </header>
 
 
@@ -162,7 +205,7 @@
                             <p class="lane-text">sale</p>
                             <p class="lane-text">sale</p>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="left-right-container">

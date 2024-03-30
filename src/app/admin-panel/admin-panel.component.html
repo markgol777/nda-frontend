@@ -46,8 +46,6 @@
                 <div class="input8">
                   <p class="upload-image-text">Upload image</p>
                   <input type="text" class="image-input">
-
-                  <!-- <input type="file" class="upload-image-input" accept="image/png, image/jpeg"> -->
                 </div>
 
                 <div class="input9">
@@ -66,12 +64,17 @@
                   <input type="text" class="description-input">
                 </div>
 
-                <input type="button" class="sumbit-btn" value="Add product" (click)="addProduct()">
+                <div class="input11">
+                  <p class="text-choose">Choose product category: </p>
+                  <input class="category" type="text">
+                </div>
+
+                <input *ngIf="!editState" type="button" class="sumbit-btn" value="Add product" (click)="addProduct()">
+                <input *ngIf="editState" type="button" class="edit-btn" value="Save product" (click)="saveProduct()">
         </div>
         <table>
             <tr>
                 <th>name</th>
-                <!-- <th>weight</th> -->
                 <th>price</th>
                 <th>old price</th>
                 <th>bg color on product page on top</th>
@@ -81,12 +84,12 @@
                 <th>lane sale</th>
                 <th>lane new</th>
                 <th>description</th>
+                <th>Category</th>
                 <th>action</th>
               </tr>
               <tr *ngFor="let product of products">
                 <td class="id">{{product._id}}</td>
                 <td>{{product.title}}</td>
-                <!-- <td>{{product.weight}}</td> -->
                 <td>{{product.price}}</td>
                 <td>{{product.oldPrice}}</td>
                 <td>{{product.bgTop}}</td>
@@ -95,9 +98,9 @@
                 <td><img height="40px" width="40px" [src]="product.imageUrl" alt=""></td>
                 <td>{{product.saleLane}}</td>
                 <td>{{product.newLane}}</td>
-                <td>{{product.description}}</td>
+                <td>{{product.description.length ? product.description.substring(0, 30) + '...' : product.description}}</td>
+                <td>{{product.category}}</td>
                 <td class="btn-container"><button class="delete-btn" (click)="delete($event)">Delete</button> <button class="edit-btn" (click)="edit($event)">Edit</button></td>
-                <!-- <td><button class="action-btn">...</button></td> -->
             </tr>
         </table>
     </section>

@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  public cart!:any;
+  public count:number = 1;
+  public totalPrice:number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
+    const cart = JSON.parse(localStorage.getItem('cart') as string)
+    this.cart = cart;
+    this.getTotalPrice()
   }
 
   mouseOver() {
@@ -32,5 +39,30 @@ export class MainPageComponent implements OnInit {
     document.querySelector<any>('.cursor').style.top = e.pageY + 'px';
   }
 
-  
+
+  cartShow() {
+    document.querySelector<any>('.cart').style.display = 'block';
+  }
+
+  closeCart() {
+    document.querySelector<any>('.cart').style.display = 'none';
+  }
+
+  minus() {
+    if (this.count > 1) this.count--
+  }
+
+  plus() {
+    this.count++
+  }
+
+  getTotalPrice() {
+    if (this.cart) {
+      for (const product of this.cart) {
+        this.totalPrice += +product.price.split('$')[1]
+      }
+    } else {
+      this.cart = [];
+    }
+  }
 }

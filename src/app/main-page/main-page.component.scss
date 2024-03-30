@@ -23,6 +23,148 @@ $nda-color: #252525;
     display: flex;
     margin-bottom: 30px;
 
+    .cart {
+      display: none;
+      width: 605px;
+      background-color: white;
+      position: absolute;
+      z-index: 999;
+      right: 0;
+      top: 0;
+
+      .price {
+        margin-bottom: 20px;
+      }
+
+      .description {
+        border-top: 1px solid rgb(197, 195, 195);
+        padding-top: 20px;
+      }
+
+      .minus {
+        cursor: pointer;
+      }
+
+      .plus {
+        cursor: pointer;
+      }
+
+      .bottom {
+        background-color: #141414;
+        width: 100%;
+        padding: 20px;
+
+        .bottom-top {
+          font-family: 'Big Shoulders Text';
+          color: white;
+
+          .left-right-container-1 {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid white;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+          }
+
+          .left-right-container-2 {
+            display: flex;
+            justify-content: space-between;
+
+            .deliver-text {
+              font-family: 'Big Shoulders Text';
+              font-weight: 700;
+              font-size: 24px;
+            }
+
+            .taxes-text {
+              font-family: 'Nunito';
+              font-size: 14px;
+            }
+          }
+
+          .total-text, .total-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+          }
+        }
+
+        .checkout-btn {
+          width: 100%;
+          border-radius: 50%;
+          height: 68px;
+          background-color: transparent;
+          border: 2px solid #FFFFFF;
+          color: white;
+          margin-top: 40px;
+          font-family: 'Nunito';
+          font-weight: 600;
+          font-size: 24px;
+        }
+      }
+
+      .close-cart-btn {
+        cursor: pointer;
+      }
+
+      .top {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        p {
+          font-family: 'Big Shoulders Text';
+          font-weight: 800;
+          font-size: 30px;
+        }
+      }
+
+      .products {
+
+        .product-container {
+          height: 300px;
+          overflow-y: scroll;
+          .product {
+            margin-bottom: 30px;
+            display: flex;
+            font-family: 'Nunito';
+
+            .amount {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 300px;
+              height: 50px;
+              border-top: 1px solid rgb(197, 195, 195);
+              border-bottom: 1px solid rgb(197, 195, 195);
+              margin-bottom: 20px;
+              margin-top: 20px;
+              font-family: 'Big Shoulders Text';
+              font-size: 18px;
+              font-weight: 700;
+            }
+
+            .name {
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        .product-container::-webkit-scrollbar {
+          background-color: white;
+        }
+
+        .product::-webkit-scrollbar-track {
+          background: orange;        /* color of the tracking area */
+        }
+
+      }
+    }
+
+
+
     .nda-container {
       background-color: #252525;
       width: 156px;
@@ -122,6 +264,7 @@ $nda-color: #252525;
         width: 45px;
         height: 45px;
         transition: 0.4s;
+        cursor: pointer;
       }
 
       .shopping-icon:hover {
@@ -760,7 +903,7 @@ $nda-color: #252525;
               0% {
                 transform: translateX(0);
               }
-        
+
               100% {
                 transform: translateX(calc(-57px * 6));
               }
@@ -923,7 +1066,7 @@ $nda-color: #252525;
               0% {
                 transform: translateX(0);
               }
-        
+
               100% {
                 transform: translateX(calc(-57px * 6));
               }

@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.main-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+
+  header {
+    width: 97%;
+    height: 120px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    margin-bottom: 30px;
+
+    .cart {
+      display: none;
+      width: 605px;
+      background-color: white;
+      position: absolute;
+      z-index: 999;
+      right: 0;
+      top: 0;
+
+      .price {
+        margin-bottom: 20px;
+      }
+
+      .description {
+        border-top: 1px solid rgb(197, 195, 195);
+        padding-top: 20px;
+      }
+
+      .minus {
+        cursor: pointer;
+      }
+
+      .plus {
+        cursor: pointer;
+      }
+
+      .bottom {
+        background-color: #141414;
+        width: 100%;
+        padding: 20px;
+
+        .bottom-top {
+          font-family: 'Big Shoulders Text';
+          color: white;
+
+          .left-right-container-1 {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid white;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+          }
+
+          .left-right-container-2 {
+            display: flex;
+            justify-content: space-between;
+
+            .deliver-text {
+              font-family: 'Big Shoulders Text';
+              font-weight: 700;
+              font-size: 24px;
+            }
+
+            .taxes-text {
+              font-family: 'Nunito';
+              font-size: 14px;
+            }
+          }
+
+          .total-text, .total-price {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 20px;
+          }
+        }
+
+        .checkout-btn {
+          width: 100%;
+          border-radius: 50%;
+          height: 68px;
+          background-color: transparent;
+          border: 2px solid #FFFFFF;
+          color: white;
+          margin-top: 40px;
+          font-family: 'Nunito';
+          font-weight: 600;
+          font-size: 24px;
+        }
+      }
+
+      .close-cart-btn {
+        cursor: pointer;
+      }
+
+      .top {
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+
+        p {
+          font-family: 'Big Shoulders Text';
+          font-weight: 800;
+          font-size: 30px;
+        }
+      }
+
+      .products {
+
+        .product-container {
+          height: 300px;
+          overflow-y: scroll;
+          .product {
+            margin-bottom: 30px;
+            display: flex;
+            font-family: 'Nunito';
+
+            .amount {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              width: 300px;
+              height: 50px;
+              border-top: 1px solid rgb(197, 195, 195);
+              border-bottom: 1px solid rgb(197, 195, 195);
+              margin-bottom: 20px;
+              margin-top: 20px;
+              font-family: 'Big Shoulders Text';
+              font-size: 18px;
+              font-weight: 700;
+            }
+
+            .name {
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        .product-container::-webkit-scrollbar {
+          background-color: white;
+        }
+
+        .product::-webkit-scrollbar-track {
+          background: orange;        /* color of the tracking area */
+        }
+
+      }
+    }
+
+    .nda-container {
+      background-color: #DEDEDE;
+      width: 156px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 53.99px;
+        height: 18.8px;
+      }
+    }
+
+    .text-header {
+      color: #ffffff;
+      margin-left: 20px;
+      width: 400px;
+      margin-right: 45px;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 34px;
+      letter-spacing: 0.05em;
+      font-family: 'Big Shoulders Text';
+      text-transform: uppercase;
+    }
+
+    .search {
+      position: relative;
+
+      input {
+        width: 532px;
+        background-color: transparent;
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        height: 60px;
+        padding-left: 20px;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      input::placeholder {
+        color: white;
+      }
+
+      img {
+        position: absolute;
+        right: 16px;
+        height: 27.75px;
+        width: 27.75px;
+        top: 16px;
+        transition: 0.4s;
+      }
+
+      img:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+
+    .menu-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .menu-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .menu-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+    .profile-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .profile-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .profile-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+    .shopping-container {
+      margin-left: 40px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .shopping-icon {
+        width: 45px;
+        height: 45px;
+        transition: 0.4s;
+      }
+
+      .shopping-icon:hover {
+        filter: brightness(0) saturate(100%) invert(69%) sepia(71%) saturate(1361%) hue-rotate(60deg) brightness(103%) contrast(97%);
+      }
+    }
+
+  }
+
+  .product-info {
+    width: 97%;
+
+
+
+    .bread-crumbs {
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 12px;
+      color: white;
+    }
+
+    .product-name {
+      color: #fff6;
+    }
+
+    .product-img {
+      height: 504px;
+      width: 519px;
+    }
+
+    .left-right-container {
+      display: flex;
+      position: relative;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+      position: fixed;
+      right: 50px;
+
+
+      .title {
+        font-family: 'Big Shoulders Text';
+        font-size: 68px;
+        color: #FFFFFF;
+      }
+
+      .price-container {
+        width: 410px;
+        height: 155px;
+        border: 2px solid #FFFFFF;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        position: relative;
+
+        .price-text {
+          font-size: 40px;
+          font-family: 'Nunito';
+          line-height: 54.56px;
+        }
+
+        .old-price {
+          margin-left: 20px;
+          color: #FFFFFF75;
+          text-decoration: line-through;
+        }
+      }
+    }
+
+    .add-to-cart-btn {
+      width: 200px;
+      height: 72px;
+      background: #FFF;
+      border-radius: 59%;
+      border: none;
+      position: absolute;
+      bottom: -36px;
+      color: #5952A2;
+      font-family: 'Nunito';
+      font-weight: 700;
+      line-height: 27px;
+      font-size: 20px;
+    }
+
+    .description {
+      width: 610px;
+      font-family: 'Nunito';
+      font-size: 18px;
+      text-align: center;
+      color: white;
+      font-weight: 400;
+      margin-top: 25px;
+    }
+  }
+}
+
+
+footer {
+  width: 96%;
+  border-top: 4px solid #FFF;
+  padding-top: 45px;
+  padding-bottom: 40px;
+  display: flex;
+  margin-top: 40px;
+
+  .nda-container {
+    margin-right: 185px;
+    background-color: #DEDEDE;
+    width: 156px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 53.99px;
+      height: 18.8px;
+    }
+  }
+
+  .right-footer {
+    display: flex;
+
+    .right-footer1 {
+      margin-right: 111px;
+    }
+
+    .right-footer2 {
+      margin-right: 114px;
+    }
+
+    .right-footer3 {
+      margin-right: 110px;
+    }
+
+    .footer-text {
+      font-family: 'Big Shoulders Text';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #FFF;
+      margin-bottom: 25px;
+      transition: 0.4s;
+    }
+
+    .social-media-text {
+      font-size: 25px;
+    }
+
+    .footer-text:hover {
+      cursor: pointer;
+      color: #3DF21F;
+    }
+  }
+}

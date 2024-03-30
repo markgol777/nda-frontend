@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cookie-page',
@@ -7,63 +9,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CookiePageComponent implements OnInit {
 
-  public products = [
-    {
-    id: 1,
-    name: 'GINGER SNAP',
-    weight: '100G',
-    price: '$15,00',
-    oldPrice: '$25,00',
-    backgroundColor: '#8B84D4',
-    imageLink: '/assets/images/purple-tastes-best.png',
-    laneBackgroundColor: '#942C1E',
-    laneColor: '#fff',
-    degrees: '90deg',
-    laneWidth: '45px',
-    laneHeight: '100%'
-  },
-
-  {
-    id: 2,
-    name: 'ALMOND',
-    weight: '100G',
-    price: '$15,00',
-    oldPrice: '',
-    backgroundColor: '#8AC6DA',
-    imageLink: '/assets/images/product2-blue.png',
-    laneBackgroundColor: '#942C1E',
-    laneColor: '#fff',
-    degrees: '90deg',
-    laneWidth: '45px',
-    laneHeight: '100%'
-  },
-
-  {
-    id: 3,
-    name: 'ALMOND',
-    weight: '100G',
-    price: '$15,00',
-    oldPrice: '',
-    backgroundColor: '#8AC6DA',
-    imageLink: '/assets/images/product2-blue.png',
-    laneBackgroundColor: '#942C1E',
-    laneColor: '#fff',
-    degrees: '90deg',
-    laneWidth: '45px',
-    laneHeight: '100%'
-  },
-]
-
   public currentProduct!:any;
+  private api: string = environment.api;
+  public id:string = 'asdf'
+  public products!: any;
+  public cart!:any;
+  public count:number = 1;
+  public totalPrice:number = 0;
 
-  constructor() { }
+  public headers: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });;
+  constructor(private http: HttpClient) {}
+
+
+
 
   ngOnInit(): void {
+    const cart = JSON.parse(localStorage.getItem('cart') as string)
+    this.cart = cart;
+    this.getTotalPrice()
+    this.get()
   }
 
-  buy(e:any) {
-    this.currentProduct = this.products[e.target.id-1];
-    // this.id = e.target.id;
-    // console.log(this.id);
+  get() {
+    const productsSorted:any = [];
+
+    this.http
+      .get(`${this.api}products`, { headers: this.headers })
+      .subscribe((products: any) => {
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].category === 'cookies') {
+            productsSorted.push(products[i])
+          }
+        }
+        this.products = productsSorted;
+      });
+  }
+
+  cartShow() {
+    document.querySelector<any>('.cart').style.display = 'block';
+  }
+
+  closeCart() {
+    document.querySelector<any>('.cart').style.display = 'none';
+  }
+
+
+  getTotalPrice() {
+    if (this.cart) {
+      for (const product of this.cart) {
+        this.totalPrice += +product.price.split('$')[1]
+      }
+    } else {
+      this.cart = [];
+    }
   }
 }

@@ -8,24 +8,58 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./candies-page.component.scss'],
 })
 export class CandiesPageComponent implements OnInit {
+  public currentProduct!:any;
   private api: string = environment.api;
-
+  public id:string = 'asdf'
   public products!: any;
+  public cart!:any;
+  public count:number = 1;
+  public totalPrice:number = 0;
+
   public headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
   });;
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {
-    this.get();
+
+  ngOnInit(): void {
+    const cart = JSON.parse(localStorage.getItem('cart') as string)
+    this.cart = cart;
+    this.getTotalPrice()
+    this.get()
   }
 
   get() {
+    const productsSorted:any = [];
+
     this.http
       .get(`${this.api}products`, { headers: this.headers })
       .subscribe((products: any) => {
-        this.products = products;
-        console.log(products);
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].category === 'candies') {
+            productsSorted.push(products[i])
+          }
+        }
+        this.products = productsSorted;
       });
+  }
+
+  cartShow() {
+    document.querySelector<any>('.cart').style.display = 'block';
+  }
+
+  closeCart() {
+    document.querySelector<any>('.cart').style.display = 'none';
+  }
+
+
+  getTotalPrice() {
+    if (this.cart) {
+      for (const product of this.cart) {
+        this.totalPrice += +product.price.split('$')[1]
+      }
+    } else {
+      this.cart = [];
+    }
   }
 }
