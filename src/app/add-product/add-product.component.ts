@@ -16,7 +16,7 @@ export class AddProductComponent implements OnInit {
   public id = 0;
   public headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
-  });;
+  });
 
   constructor(public dialog: MatDialog, private http: HttpClient) { }
 

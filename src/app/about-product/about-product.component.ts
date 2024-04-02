@@ -35,15 +35,19 @@ export class AboutProductComponent implements OnInit {
         this.background = `background: linear-gradient(0deg, ${this.product.bgTop} 56%, ${this.product.bgBottom} 36%);`
       });
 
-      const cart = JSON.parse(localStorage.getItem('cart') as string)
+      const cart = JSON.parse(localStorage.getItem('cart') as string);
       this.cart = cart;
-      this.getTotalPrice()
-      this.get()
+      this.getTotalPrice();
+      this.get();
     }
 
     addToCart() {
-      this.cart.push(this.product)
-      localStorage.setItem('cart', JSON.stringify(this.cart))
+      this.totalPrice = 0;
+      console.log(this.product);
+
+      this.cart.push(this.product);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
+      this.getTotalPrice();
     }
 
     get() {
@@ -64,9 +68,11 @@ export class AboutProductComponent implements OnInit {
 
 
     getTotalPrice() {
+      console.log(this.totalPrice);
+
       if (this.cart) {
         for (const product of this.cart) {
-          this.totalPrice += +product.price.split('$')[1]
+          this.totalPrice += parseInt(product.price.split('$')[1])
         }
       } else {
         this.cart = [];

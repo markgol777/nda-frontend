@@ -16,6 +16,7 @@ export class CookiePageComponent implements OnInit {
   public cart!:any;
   public count:number = 1;
   public totalPrice:number = 0;
+  public isEmpty:boolean = true;
 
   public headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -30,6 +31,8 @@ export class CookiePageComponent implements OnInit {
     this.cart = cart;
     this.getTotalPrice()
     this.get()
+    if (cart) this.isEmpty = false;
+    else this.isEmpty = true;
   }
 
   get() {

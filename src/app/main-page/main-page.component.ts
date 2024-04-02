@@ -59,7 +59,7 @@ export class MainPageComponent implements OnInit {
   getTotalPrice() {
     if (this.cart) {
       for (const product of this.cart) {
-        this.totalPrice += +product.price.split('$')[1]
+        this.totalPrice += parseInt(product.price.split('$')[1])
       }
     } else {
       this.cart = [];

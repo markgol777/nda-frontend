@@ -52,7 +52,6 @@ export class CandiesPageComponent implements OnInit {
     document.querySelector<any>('.cart').style.display = 'none';
   }
 
-
   getTotalPrice() {
     if (this.cart) {
       for (const product of this.cart) {

@@ -28,14 +28,14 @@
       </div>
       <div class="products">
         <div class="product-container">
-          <div *ngFor="let product of cart" class="product">
+          <div *ngFor="let product1 of cart" class="product">
             <div class="left">
-              <img height="160px" width="160px" [src]="product.imageUrl" alt="">
+              <img height="160px" width="160px" [src]="product1.imageUrl" alt="">
             </div>
             <div class="right">
-              <p class="name">{{product.title}}</p>
-              <p class="price">{{product.price}}</p>
-              <p class="description">{{product.description}}</p>
+              <p class="name">{{product1.title}}</p>
+              <p class="price">{{product1.price}}</p>
+              <p class="description">{{product1.description}}</p>
             </div>
           </div>
         </div>

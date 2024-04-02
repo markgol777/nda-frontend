@@ -18,6 +18,13 @@
     display: flex;
     margin-bottom: 27px;
 
+    .empty-cart {
+      font-family: 'Big shoulders text';
+      text-align: center;
+      margin-top: 50px;
+      text-transform: uppercase;
+    }
+
     .cart {
       display: none;
       width: 605px;
